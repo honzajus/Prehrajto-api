@@ -1,0 +1,22 @@
+{
+  "name": "prehrajto-api",
+  "version": "1.0.0",
+  "description": "Lokální REST API pro vyhledávání na Prehraj.to",
+  "main": "dist/server.js",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.12",
+    "fastify": "^4.26.1",
+    "undici": "^6.6.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.19",
+    "tsx": "^4.7.1",
+    "typescript": "^5.3.3"
+  }
+}
