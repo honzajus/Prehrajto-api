@@ -4,7 +4,6 @@ Local REST API built with TypeScript for searching videos.
 
 ## Start
 
-```bash
 npm install
 npm run dev
 
@@ -12,23 +11,25 @@ Server:
 
 http://localhost:3000
 
-API
-Search
+## API
+
+### Search
 
 http://localhost:3000/api/search?title=SamDoma
 
 Open the URL directly in your browser.
 
-Example
+### Example
 
 http://localhost:3000/api/search?title=The%20Boys
 
-Health Check
+### Health Check
 
 http://localhost:3000/health
 
-Parameters
-title
+## Parameters
+
+### title
 
 Search for a movie or series:
 
@@ -36,7 +37,7 @@ http://localhost:3000/api/search?title=SamDoma
 
 http://localhost:3000/api/search?title=The%20Boys
 
-quality
+### quality
 
 Select video quality:
 
@@ -44,7 +45,37 @@ http://localhost:3000/api/search?title=The%20Boys&quality=720
 
 http://localhost:3000/api/search?title=The%20Boys&quality=1080
 
-Response
+## Example Response - Sam Doma
+
+Request:
+
+http://localhost:3000/api/search?title=SamDoma
+
+Response:
+
+{
+  "success": true,
+  "result": {
+    "series": null,
+    "season": null,
+    "episode": null,
+    "title": "Sám doma 1 (1990) - CZ Dabing.",
+    "videoId": "2d8ceac1da10cee9",
+    "pageUrl": "https://prehraj.to/sam-doma-1-1990-cz-dabing-top2026/2d8ceac1da10cee9",
+    "streams": [
+      {
+        "quality": "1080p",
+        "format": "mp4",
+        "url": "AUTHORIZED_STREAM_URL"
+      }
+    ],
+    "subtitles": [],
+    "duration": "N/A"
+  }
+}
+
+## Example Response - The Boys
+
 {
   "success": true,
   "result": {
@@ -58,7 +89,7 @@ Response
       {
         "quality": "720p",
         "format": "mp4",
-        "url": "..."
+        "url": "AUTHORIZED_STREAM_URL"
       }
     ],
     "subtitles": [
@@ -74,7 +105,9 @@ Response
     "duration": "1:06:45"
   }
 }
-Project Structure
+
+## Project Structure
+
 video-search-api/
 ├── src/
 │   ├── parsers/
@@ -90,13 +123,20 @@ video-search-api/
 ├── package.json
 ├── tsconfig.json
 └── README.md
-Build
+
+## Build
+
 npm run build
-Production
+
+## Production
+
 npm start
-Test
+
+## Test
+
 curl "http://localhost:3000/api/search?title=SamDoma"
-Browser
+
+## Browser
 
 Open:
 
