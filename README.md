@@ -45,6 +45,46 @@ http://localhost:3000/api/search?title=The%20Boys&quality=720
 
 http://localhost:3000/api/search?title=The%20Boys&quality=1080
 
+### season, episode
+
+Specific episode of a series (the code can also be part of the title):
+
+http://localhost:3000/api/search?title=The%20Boys&season=5&episode=8
+
+http://localhost:3000/api/search?title=The%20Boys%20S05E08
+
+### type
+
+`movie` ignores series episodes, `series` without season/episode returns S01E01:
+
+http://localhost:3000/api/search?title=Inception&type=movie
+
+### all
+
+Return every playable upload instead of the first one:
+
+http://localhost:3000/api/search?title=The%20Boys&season=5&episode=8&all=1
+
+## Series - list of episodes
+
+All seasons/episodes found:
+
+http://localhost:3000/api/series?title=The%20Boys
+
+Episodes of one season (each with its uploads):
+
+http://localhost:3000/api/series?title=The%20Boys&season=5
+
+The listing only covers the first page of prehraj.to results (other pages require login), so it can be incomplete. A missing episode can still be loaded directly via `season` + `episode`.
+
+## Video by URL
+
+http://localhost:3000/api/video?url=https://prehraj.to/the-boys-s05e08-cz-dabing/a9e37e7f85b16929
+
+## Rate limit
+
+prehraj.to allows only about 5 searches per minute per IP. Searches are cached for 15 minutes; when the limit is hit the API responds with `429`.
+
 ## Example Response - Sam Doma
 
 Request:

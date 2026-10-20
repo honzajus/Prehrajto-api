@@ -6,7 +6,7 @@ const fastify = Fastify({
 });
 
 fastify.get('/health', async () => {
-  return { status: 'ok jsi negr' };
+  return { status: 'ok' };
 });
 
 await fastify.register(searchRoutes);
